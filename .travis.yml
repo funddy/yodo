@@ -1,0 +1,15 @@
+language: php
+
+php:
+    - 5.3
+    - 5.4
+
+before_install:
+    - sudo apt-get -qq update
+    - sudo apt-get -qq install php5-tidy
+
+before_script:
+    - curl -s http://getcomposer.org/installer | php
+    - php composer.phar install --dev
+
+script: bin/phpunit
