@@ -54,7 +54,7 @@ $rules
 $sanitizer = new HtmlSanitizer($rules, new TidyMarkupFixer());
 
 $html = <<<HTML
-<p>This an awesome paragraph!<a href="javascript:alert('oh')">with evil links inside!</a></p>
+<p>This is an awesome paragraph!<a href="javascript:alert('oh')">with evil links inside!</a></p>
 <h3>This tag is not allowed!</h3>
 <br/>
 <a href="http://example.com/">Valid link</a>
@@ -69,5 +69,5 @@ echo $sanitizer->sanitize($html);
 ```
 The output will be
 ```html
-<p>This an awesome paragraph!</p><br><a href="http://example.com/">Valid link</a><p class="class1">Paragraph with <a href="http://example.com/">valid link</a></p>
+<p>This is an awesome paragraph!</p><br><a href="http://example.com/">Valid link</a><p class="class1">Paragraph with <a href="http://example.com/">valid link</a></p>
 ```
